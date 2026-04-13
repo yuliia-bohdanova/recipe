@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:tmobile/pages/recipeAdd.dart';
+import 'package:carousel_slider/carousel_slider.dart';
 
 class Home extends StatefulWidget {
   const Home({super.key});
@@ -46,7 +47,55 @@ class _HomeState extends State<Home> {
                 // search logic
               },
             ),
-            Container(),
+            CarouselSlider(
+              options: CarouselOptions(
+                height: 200,
+                autoPlay: true,
+                enlargeCenterPage: true,
+              ),
+              items: [
+                'lib/img/recipe1.jpg',
+                'lib/img/recipe2.jpg',
+                'lib/img/recipe3.jpg',
+                'lib/img/recipe4.jpg',
+              ].map((imagePath) {
+                return ClipRRect(
+                  borderRadius: BorderRadius.circular(20),
+                  child: Image.asset(imagePath, fit: BoxFit.cover, width: double.infinity),
+                );
+              }).toList(),
+            )
+            // SizedBox(height: 20),
+            // Row(
+            //   children: [
+            //
+            //     Image.asset(
+            //       'lib/img/recipe1.jpg',
+            //       width: 300,
+            //       fit: BoxFit.cover,
+            //     ),
+            //     SizedBox(width: 20),
+            //     Image.asset(
+            //       'lib/img/recipe2.jpg',
+            //       width: 150,
+            //       fit: BoxFit.cover,
+            //     ),
+            //   ],
+            // ),
+            SizedBox(height: 20),
+
+            Row(
+              children: [
+
+                Image.asset(
+                  'lib/img/recipe3.jpg',
+                  width: 300,
+                  fit: BoxFit.cover,
+                ),
+                SizedBox(width: 20),
+
+              ],
+            ),
           ],
         ),
       ),
