@@ -64,7 +64,7 @@ class _HomeState extends State<Home> {
                   child: Image.asset(imagePath, fit: BoxFit.cover, width: double.infinity),
                 );
               }).toList(),
-            )
+            ),
             // SizedBox(height: 20),
             // Row(
             //   children: [
